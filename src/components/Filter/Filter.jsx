@@ -1,4 +1,3 @@
-// import { useId } from 'react';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { Box, Label, InputSearch } from 'components/Filter/Filter.styled';
