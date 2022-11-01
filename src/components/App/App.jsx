@@ -5,14 +5,13 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import { Wrap, Title, MainTitle } from 'components/App/App.styled';
+import { getItem } from 'utils/localStorage';
 
 const LOCAL_STORAGE_KEY = 'contacts';
 
 export const App = () => {
   const [filter, setFilter] = useState('');
-  const [contacts, setContacts] = useState(
-    JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || []
-  );
+  const [contacts, setContacts] = useState(getItem());
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
